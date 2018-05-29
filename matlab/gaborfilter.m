@@ -82,8 +82,8 @@ if strcmp(D,'true')
     figure(2),imagesc(filter),hold on,
     rectangle('Position',b,'EdgeColor','r')
     plot(centroides(1),centroides(2),'+b')
+    hold off;
 end
-hold off;
 
 % filter centering
 delta = [centroides(1)-b(1), b(3) + 1, centroides(2)-b(2), b(4) + 1];

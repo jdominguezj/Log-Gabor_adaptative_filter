@@ -78,7 +78,7 @@ filter_subregion = filter(b(2):b(2)+b(4),b(1):b(1)+b(3));
 [rows_r,cols_r] = ind2sub([size(filter_subregion,1),size(filter_subregion,2)],idx);
 centroides = [cols_r + b(1)-1,rows_r + b(2)-1];
 figure(2),imagesc(filter),hold on,
-if(D)
+if strcmp(D,'true')
     rectangle('Position',b,'EdgeColor','r')
     plot(centroides(1),centroides(2),'+b')
 end

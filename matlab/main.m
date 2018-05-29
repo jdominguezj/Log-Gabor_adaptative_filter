@@ -11,4 +11,6 @@ wavelength = 20;
 sigmaOnf = 0.55;
 thetaSigma = 0.25;
 
-[residue_sum] = funcObj(fftspectrum,cx,cy,s,wavelength,sigmaOnf,thetaSigma,angl,'false');
+[residue_sum] = funcObj(fftspectrum,cx,cy,wavelength,s,sigmaOnf,thetaSigma,angl,'true');
+
+%% PSO optimization

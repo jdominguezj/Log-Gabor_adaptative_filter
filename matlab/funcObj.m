@@ -1,4 +1,4 @@
-function [residue_sum] = funcObj(I,cx,cy,wavelength,s,sigmaOnf,thetaSigma,angl,D)
+function [residue_sum,phased,gabor_filter] = funcObj(I,cx,cy,wavelength,s,sigmaOnf,thetaSigma,angl,D)
 % % This code is part of research work done by Jesus Pineda Castro, Jackson Meza and 
 % Juan Dominguez. Universidad Tecnológica de Bolívar , Cartagena, Colombia.
 % parameter description:

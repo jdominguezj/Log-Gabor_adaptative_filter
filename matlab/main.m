@@ -15,3 +15,13 @@ thetaSigma = 0.18;
 
 figure(1),imagesc(ifftshift(gabor_filter))
 figure(2),imagesc(phased)
+
+%% Optimization with PSO
+
+f = @(inputs) funcObj(fftspectrum,cx,cy,wavelength,round(inputs(1)),...
+    inputs(2),inputs(3),angl,'false');
+
+optimun = PSO(f,10,[500 0.45 0.2],[6000 0.7 0.8],10,1000);
+
+
+

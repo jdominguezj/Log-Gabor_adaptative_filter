@@ -88,6 +88,7 @@ end
 % filter centering
 delta = [centroides(1)-b(1), b(3) + 1, centroides(2)-b(2), b(4) + 1];
 filter_I(cy-delta(3): cy-delta(3) + delta(4) - 1,cx-delta(1): cx-delta(1) + delta(2) - 1) = filter_subregion;
+filter_I = filter_I(1:size(I,1),1:size(I,2));
 
 % output
 gabor_filter = ifftshift(filter_I);

@@ -24,7 +24,7 @@ Ih = fftshift(abs(Fim));
 Ih(:,end/2-5:end/2+5)=0;
 In = round(1024*imnormalize(Ih));
 
-if (D)
+if strcmp(D,'true')
     figure(700), imagesc(In), colormap gray, hold on
 end
 [h,w] = size(In);
@@ -37,7 +37,7 @@ seed_tl = [offset_h offset_w];
 seed_tr = [offset_h w-offset_w];
 seed_bl = [h-offset_h offset_w];
 seed_br = [h-offset_h w-offset_w];
-if(pi)
+if strcmp(D,'true')
     plot(offset_w,offset_h,'sr')
     plot(w-offset_w,offset_h,'sr')
     plot(offset_w,h-offset_h,'sr')
@@ -51,7 +51,7 @@ S(seed_bl(1),seed_bl(2)) = 1;
 S(seed_br(1),seed_br(2)) = 1;
 
 mask = ~regiongrow(In,S,T);
-if (D)
+if strcmp(D,'true')
     figure(799), imagesc(mask),colormap gray
     figure(800), imagesc(In), hold on
 end
@@ -69,7 +69,7 @@ for i=1:talla
     [~,idx] = max(subregion(:));
     [rows_r,cols_r] = ind2sub([size(subregion,1),size(subregion,2)],idx);
     centroides(i,:) = [cols_r + b(1)-1,rows_r + b(2)-1];
-    if(D)
+    if strcmp(D,'true')
         rectangle('Position',Rec(i,:),'EdgeColor','r')
         plot(centroides(i,1),centroides(i,2),'+b')
     end

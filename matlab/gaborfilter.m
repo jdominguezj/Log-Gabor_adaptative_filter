@@ -39,7 +39,7 @@ fo = 1.0/wavelength;                  % Centre frequency of filter.
 
 % The following implements the log-gabor transfer function.
 logGabor = exp((-(log(radius/fo)).^2) / (2 * log(sigmaOnf)^2));
-logGabor(s/2+1, s/2+1) = 0;     % Set the value at the 0 frequency point
+logGabor(round(s/2+1), round(s/2+1)) = 0;     % Set the value at the 0 frequency point
 % of the filter back to zero
 % (undo the radius fudge).
 logGabor = logGabor.*lp;  

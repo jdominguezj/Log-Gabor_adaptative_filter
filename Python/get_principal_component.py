@@ -13,8 +13,8 @@ import numpy
 
 @mfunction("cx","cy","bounding_box","area","orientation","F") 
 def get_principal_component_(I,T,D):
-    Gx=hanning(size_((I,2),nargout=2))
-    Gxy=hanning(size_((I,1),nargout=2))
+    Gx=hanning(size(I,2))
+    Gxy=hanning(size(I,1))
     AA=Gy*Gx.cT
     AA=(AA-min(AA(mslice[:])))/(max(AA(mslice[:]))-min(AA(mslice[:])))
 
